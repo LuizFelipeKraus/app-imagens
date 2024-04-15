@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-imagens-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-deployment
+  template:
+    metadata:
+      labels:
+        app: app-deployment
+    spec:
+      containers:
+      - name: api-imagens-container
+        image: luizfelipekraus/api-imagens-image
+        ports:
+        - containerPort: 8004
+        livenessProbe:
+          httpGet:
+            path: /baixas/status
+            port: 8004
+          initialDelaySeconds: 15
+          periodSeconds: 20
