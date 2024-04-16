@@ -51,3 +51,4 @@ CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=8004"]
 
 #phometeus
 #docker run  --name prometheus-container -d -p 9090:9090 --network redis-network -v ${PWD}/prometheus.yaml:/etc/prometheus/prometheus.yml  prom/prometheus
+#58:48

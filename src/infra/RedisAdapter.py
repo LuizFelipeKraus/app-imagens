@@ -3,7 +3,7 @@ import redis
 
 class RedisAdapter:
     def __init__(self):
-        self.conexao = redis.Redis(host='redis-container', port=6379)
+        self.conexao = redis.Redis(host='redis-service', port=6379)
 
     def enfileirar(self, fila, mensagem):
         if self.conexao is not None:
